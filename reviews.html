@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reviews | Uhuru Restaurant</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+        }
+
+        /* HEADER */
+        header {
+            height: 70px;
+            background: #151515;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .logo {
+            color: #f5b400;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* HAMBURGER */
+        .hamburger {
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 6px;
+            background: #f5b400;
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 26px;
+            height: 3px;
+            background: #111;
+            border-radius: 5px;
+        }
+
+        /* MENU */
+        .menu {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            width: 220px;
+            background: #222;
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .menu.active {
+            display: block;
+        }
+
+        .menu a {
+            display: block;
+            padding: 16px 20px;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+        }
+
+        .menu a:hover {
+            background: #f5b400;
+            color: #111;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 360px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.55),
+                    rgba(0,0,0,.8)
+                ),
+                url("https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            color: #f5b400;
+        }
+
+        .hero p {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        /* REVIEWS */
+        .reviews {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .reviews h2 {
+            color: #f5b400;
+            margin-bottom: 35px;
+        }
+
+        .review-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .review {
+            background: #1d1d1d;
+            padding: 30px 20px;
+            border-radius: 10px;
+        }
+
+        .stars {
+            color: #f5b400;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .review p {
+            color: #ccc;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .review h3 {
+            color: white;
+        }
+
+        .review small {
+            color: #999;
+        }
+
+        /* WRITE REVIEW */
+        .write-review {
+            max-width: 700px;
+            margin: 20px auto 60px;
+            padding: 30px 20px;
+            background: #1d1d1d;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .write-review h2 {
+            color: #f5b400;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            color: #ddd;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 18px;
+            background: #111;
+            color: white;
+            border: 1px solid #444;
+            border-radius: 5px;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button.submit {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            background: #f5b400;
+            color: #111;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #080808;
+            text-align: center;
+            padding: 25px;
+            color: #aaa;
+        }
+
+        /* MOBILE */
+        @media (max-width: 750px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+            UHURU
+        </div>
+
+        <!-- TOP RIGHT HAMBURGER -->
+        <button class="hamburger" onclick="toggleMenu()">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <!-- MENU -->
+        <nav class="menu" id="menu">
+
+            <a href="home.html">Home</a>
+
+            <a href="services.html">Services</a>
+
+            <a href="contact.html">Contact</a>
+
+            <a href="reviews.html">Reviews</a>
+
+            <a href="gallery.html">Gallery</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div>
+
+            <h1>Guest Reviews</h1>
+
+            <p>
+                What our guests have to say.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- REVIEWS -->
+    <section class="reviews">
+
+        <h2>What Our Guests Say</h2>
+
+        <div class="review-grid">
+
+            <div class="review">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "The food was delicious and the
+                    atmosphere was very welcoming."
+                </p>
+
+                <h3>Guest 1</h3>
+
+                <small>Restaurant Guest</small>
+
+            </div>
+
+
+            <div class="review">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "Great place to enjoy a meal with
+                    friends and family."
+                </p>
+
+                <h3>Guest 2</h3>
+
+                <small>Restaurant Guest</small>
+
+            </div>
+
+
+            <div class="review">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "Friendly service and tasty food.
+                    I would definitely visit again."
+                </p>
+
+                <h3>Guest 3</h3>
+
+                <small>Restaurant Guest</small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WRITE REVIEW -->
+    <section class="write-review">
+
+        <h2>Leave a Review</h2>
+
+        <form onsubmit="submitReview(event)">
+
+            <label for="name">
+                Your Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label for="review">
+                Your Review
+            </label>
+
+            <textarea
+                id="review"
+                placeholder="Tell us about your experience..."
+                required
+            ></textarea>
+
+
+            <button
+                class="submit"
+                type="submit"
+            >
+                Submit Review
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Uhuru Restaurant
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function toggleMenu() {
+
+            const menu =
+                document.getElementById("menu");
+
+            menu.classList.toggle("active");
+
+        }
+
+
+        function submitReview(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Thank you for sharing your review!"
+            );
+
+        }
+
+    </script>
+
+</body>
+</html>
