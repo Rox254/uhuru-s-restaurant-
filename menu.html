@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Menu - Uhuru Restaurant</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+/* HEADER */
+
+header {
+    height: 70px;
+    background: #151515;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+}
+
+.logo {
+    color: #f5b400;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* HAMBURGER */
+
+.hamburger {
+    width: 45px;
+    height: 45px;
+    background: #f5b400;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #111;
+}
+
+/* MENU */
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #1d1d1d;
+    width: 200px;
+    z-index: 1000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.menu.active {
+    display: block;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.menu a:hover {
+    background: #f5b400;
+    color: #111;
+}
+
+/* HERO */
+
+.hero {
+    height: 280px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80")
+    center/cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #f5b400;
+}
+
+/* MENU SECTION */
+
+.food-menu {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.food-menu h2 {
+    text-align: center;
+    color: #f5b400;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.food-card {
+    background: #1d1d1d;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    border-left: 4px solid #f5b400;
+}
+
+.food-card h3 {
+    color: #f5b400;
+    margin-bottom: 8px;
+}
+
+.food-card p {
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.price {
+    color: #f5b400;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* FOOTER */
+
+footer {
+    background: #151515;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    color: #aaa;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .food-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .food-card {
+        flex-direction: column;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Uhuru Restaurant
+    </div>
+
+    <button class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="menu" id="menu">
+
+        <a href="home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="gallery.html">Gallery</a>
+
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>
+        Our Menu
+    </h1>
+
+</section>
+
+
+<section class="food-menu">
+
+    <h2>
+        Popular Dishes
+    </h2>
+
+    <div class="food-grid">
+
+        <div class="food-card">
+            <div>
+                <h3>Grilled Chicken</h3>
+                <p>Juicy grilled chicken served with vegetables and fries.</p>
+            </div>
+            <div class="price">KES 850</div>
+        </div>
+
+
+        <div class="food-card">
+            <div>
+                <h3>Kenyan Pilau</h3>
+                <p>Fragrant spiced rice prepared with tender beef.</p>
+            </div>
+            <div class="price">KES 650</div>
+        </div>
+
+
+        <div class="food-card">
+            <div>
+                <h3>Beef Steak</h3>
+                <p>Tender grilled beef steak served with fresh vegetables.</p>
+            </div>
+            <div class="price">KES 1,200</div>
+        </div>
+
+
+        <div class="food-card">
+            <div>
+                <h3>Uhuru Burger</h3>
+                <p>Classic beef burger with cheese, vegetables and fries.</p>
+            </div>
+            <div class="price">KES 700</div>
+        </div>
+
+
+        <div class="food-card">
+            <
