@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - Uhuru Restaurant</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+header {
+    height: 70px;
+    background: #151515;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    color: #f5b400;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.hamburger {
+    width: 45px;
+    height: 45px;
+    background: #f5b400;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background: #111;
+    margin: 5px 0;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    background: #1d1d1d;
+    width: 200px;
+    z-index: 10;
+    border-radius: 6px;
+}
+
+.menu.active {
+    display: block;
+}
+
+.menu a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+}
+
+.menu a:hover {
+    color: #f5b400;
+}
+
+.hero {
+    height: 260px;
+    background:
+    linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80")
+    center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 42px;
+    color: #f5b400;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.policy {
+    background: #1d1d1d;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.policy h2 {
+    color: #f5b400;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+.policy h2:first-child {
+    margin-top: 0;
+}
+
+.policy p {
+    line-height: 1.8;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+footer {
+    background: #151515;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    color: #aaa;
+}
+
+@media (max-width: 700px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .policy {
+        padding: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">Uhuru Restaurant</div>
+
+    <button class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="menu" id="menu">
+        <a href="home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+
+</header>
+
+<section class="hero">
+    <h1>Privacy Policy</h1>
+</section>
+
+<div class="container">
+
+    <div class="policy">
+
+        <h2>1. Introduction</h2>
+
+        <p>
+            Welcome to Uhuru Restaurant. We respect your privacy and
+            are committed to protecting information you provide when
+            using our website.
+        </p>
+
+        <h2>2. Information We Collect</h2>
+
+        <p>
+            When you contact us, make a reservation or submit a form,
+            we may receive information such as your name, phone number,
+            email address and reservation details.
+        </p>
+
+        <h2>3. How We Use Information</h2>
+
+        <p>
+            Information provided through our website may be used to
+            respond to enquiries, manage reservations and improve our
+            customer service.
+        </p>
+
+        <h2>4. Information Protection</h2>
+
+        <p>
+            We take reasonable steps to protect information submitted
+            through our website from unauthorized access or misuse.
+        </p>
+
+        <h2>5. Third-Party Services</h2>
+
+        <p>
+            Some website features may use third-party services such as
+            maps or external image services. Those services may have
+            their own privacy policies.
+        </p>
+
+        <h2>6. Contact Us</h2>
+
+        <p>
+            If you have questions about this privacy policy, please
+            visit our Contact page.
+        </p>
+
+        <h2>7. Updates</h2>
+
+        <p>
+            This privacy policy may be updated from time to time to
+            reflect changes to our website or services.
+        </p>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Uhuru Restaurant. All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
