@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Chef - Uhuru Restaurant</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+header {
+    height: 70px;
+    background: #151515;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    color: #f5b400;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.hamburger {
+    width: 45px;
+    height: 45px;
+    background: #f5b400;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background: #111;
+    margin: 5px 0;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    background: #1d1d1d;
+    width: 200px;
+    z-index: 10;
+    border-radius: 6px;
+}
+
+.menu.active {
+    display: block;
+}
+
+.menu a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+}
+
+.menu a:hover {
+    color: #f5b400;
+}
+
+.hero {
+    height: 300px;
+    background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1400&q=80")
+    center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 42px;
+    color: #f5b400;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.chef-box {
+    background: #1d1d1d;
+    padding: 30px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.chef-box img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.chef-info h2 {
+    color: #f5b400;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.chef-info h3 {
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.chef-info p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+.specialties {
+    margin-top: 20px;
+}
+
+.specialties h3 {
+    color: #f5b400;
+    margin-bottom: 10px;
+}
+
+.specialties p {
+    margin-bottom: 8px;
+}
+
+footer {
+    background: #151515;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    color: #aaa;
+}
+
+@media (max-width: 750px) {
+    .chef-box {
+        grid-template-columns: 1fr;
+    }
+
+    .chef-box img {
+        height: 350px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Uhuru Restaurant</div>
+
+    <button class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="menu" id="menu">
+        <a href="home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Meet Our Chef</h1>
+</section>
+
+<div class="container">
+
+    <div class="chef-box">
+
+        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=900&q=80"
+             alt="Chef at Uhuru Restaurant">
+
+        <div class="chef-info">
+
+            <h2>Chef Daniel</h2>
+
+            <h3>Head Chef at Uhuru Restaurant</h3>
+
+            <p>
+                Our kitchen is dedicated to preparing delicious meals
+                using fresh ingredients and carefully selected flavors.
+            </p>
+
+            <p>
+                Chef Daniel leads our kitchen team with a passion for
+                Kenyan cuisine, modern dishes and memorable dining
+                experiences.
+            </p>
+
+            <div class="specialties">
+                <h3>Chef's Specialties</h3>
+                <p>🍗 Grilled Chicken</p>
+                <p>🍛 Kenyan Pilau</p>
+                <p>🥩 Beef Steak</p>
+                <p>🍕 Special Pizza</p>
+                <p>🥗 Fresh Salads</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Uhuru Restaurant. All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
