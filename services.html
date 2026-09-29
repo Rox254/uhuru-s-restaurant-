@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Services | Uhuru Restaurant</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+        }
+
+        /* HEADER */
+        header {
+            height: 70px;
+            background: #151515;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .logo {
+            color: #f5b400;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* HAMBURGER */
+        .hamburger {
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 6px;
+            background: #f5b400;
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 26px;
+            height: 3px;
+            background: #111;
+            border-radius: 5px;
+        }
+
+        /* MENU */
+        .menu {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            width: 220px;
+            background: #222;
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .menu.active {
+            display: block;
+        }
+
+        .menu a {
+            display: block;
+            padding: 16px 20px;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+        }
+
+        .menu a:hover {
+            background: #f5b400;
+            color: #111;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.55),
+                    rgba(0,0,0,.8)
+                ),
+                url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1400&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            color: #f5b400;
+        }
+
+        .hero p {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .services h2 {
+            color: #f5b400;
+            margin-bottom: 35px;
+        }
+
+        .service-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service {
+            background: #1d1d1d;
+            border-radius: 10px;
+            padding: 30px 20px;
+            transition: transform .3s;
+        }
+
+        .service:hover {
+            transform: translateY(-8px);
+        }
+
+        .service-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .service h3 {
+            color: #f5b400;
+            margin-bottom: 12px;
+        }
+
+        .service p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #080808;
+            text-align: center;
+            padding: 25px;
+            color: #aaa;
+        }
+
+        /* MOBILE */
+        @media (max-width: 750px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
