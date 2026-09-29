@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Offers - Uhuru Restaurant</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+header {
+    height: 70px;
+    background: #151515;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    color: #f5b400;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.hamburger {
+    width: 45px;
+    height: 45px;
+    background: #f5b400;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background: #111;
+    margin: 5px 0;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    background: #1d1d1d;
+    width: 200px;
+    z-index: 10;
+    border-radius: 6px;
+}
+
+.menu.active {
+    display: block;
+}
+
+.menu a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+}
+
+.menu a:hover {
+    color: #f5b400;
+}
+
+.hero {
+    height: 300px;
+    background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=80")
+    center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 42px;
+    color: #f5b400;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.offers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.offer {
+    background: #1d1d1d;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.offer h2 {
+    color: #f5b400;
+    margin-bottom: 15px;
+}
+
+.offer p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #f5b400;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: #f5b400;
+    color: #111;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+footer {
+    background: #151515;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    color: #aaa;
+}
+
+@media (max-width: 800px) {
+    .offers {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .offers {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Uhuru Restaurant</div>
+
+    <button class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="menu" id="menu">
+        <a href="home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Special Offers</h1>
+</section>
+
+<div class="container">
+
+    <div class="offers">
+
+        <div class="offer">
+            <h2>Lunch Special</h2>
+            <p>Enjoy our delicious grilled chicken with a refreshing juice.</p>
+            <div class="price">KES 999</div>
+            <a class="button" href="contact.html">Order Now</a>
+        </div>
+
+        <div class="offer">
+            <h2>Family Deal</h2>
+            <p>A delicious family meal perfect for sharing with loved ones.</p>
+            <div class="price">KES 2,500</div>
+            <a class="button" href="contact.html">Order Now</a>
+        </div>
+
+        <div class="offer">
+            <h2>Breakfast Deal</h2>
+            <p>Start your morning with eggs, toast, sausage and fresh tea.</p>
+            <div class="price">KES 650</div>
+            <a class="button" href="contact.html">Order Now</a>
+        </div>
+
+        <div class="offer">
+            <h2>Pizza Night</h2>
+            <p>Enjoy a special Uhuru pizza with your choice of toppings.</p>
+            <div class="price">KES 950</div>
+            <a class="button" href="contact.html">Order Now</a>
+        </div>
+
+        <div class="offer">
+            <h2>Weekend Special</h2>
+            <p>Try our chef's special platter every Saturday and Sunday.</p>
+            <div class="price">KES 1,500</div>
+            <a class="button" href="contact.html">Order Now</a>
+        </div>
+
+        <div class="offer">
+            <h2>Drinks Deal</h2>
+            <p>Enjoy two fresh juices together at a special price.</p>
+            <div class="price">KES 500</div>
+            <a class="button" href="contact.html">Order Now</a>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Uhuru Restaurant. All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
