@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Desserts - Uhuru Restaurant</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+header {
+    height: 70px;
+    background: #151515;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+}
+
+.logo {
+    color: #f5b400;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.hamburger {
+    width: 45px;
+    height: 45px;
+    background: #f5b400;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #111;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #1d1d1d;
+    width: 200px;
+    z-index: 1000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.menu.active {
+    display: block;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.menu a:hover {
+    background: #f5b400;
+    color: #111;
+}
+
+.hero {
+    height: 280px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1400&q=80")
+    center/cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #f5b400;
+}
+
+.desserts {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.desserts h2 {
+    text-align: center;
+    color: #f5b400;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.dessert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.dessert-card {
+    background: #1d1d1d;
+    padding: 22px;
+    border-radius: 10px;
+    border-left: 4px solid #f5b400;
+}
+
+.dessert-card h3 {
+    color: #f5b400;
+    margin-bottom: 10px;
+}
+
+.dessert-card p {
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.price {
+    color: #f5b400;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+footer {
+    background: #151515;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    color: #aaa;
+}
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .dessert-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Uhuru Restaurant
+    </div>
+
+    <button class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="menu" id="menu">
+
+        <a href="home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="gallery.html">Gallery</a>
+
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>
+        Desserts
+    </h1>
+
+</section>
+
+
+<section class="desserts">
+
+    <h2>
+        Sweet Treats
+    </h2>
+
+    <div class="dessert-grid">
+
+        <div class="dessert-card">
+            <h3>Chocolate Cake</h3>
+            <p>Rich chocolate cake served with a smooth chocolate topping.</p>
+            <div class="price">KES 400</div>
+        </div>
+
+        <div class="dessert-card">
+            <h3>Cheesecake</h3>
+            <p>Creamy cheesecake with a delicious fruit topping.</p>
+            <div class="price">KES 450</div>
+        </div>
+
+        <div class="dessert-card">
+            <h3>Ice Cream</h3>
+            <p>Cold and creamy ice cream available in several flavours.</p>
+            <div class="price">KES 300</div>
+        </div>
+
+        <div class="dessert-card">
+            <h3>Fruit Salad</h3>
+            <p>A refreshing mix of fresh seasonal fruits.</p>
+            <div class="price">KES 350</div>
+        </div>
+
+        <div class="dessert-card">
+            <h3>Mandazi</h3>
+            <p>Fresh Kenyan-style sweet mandazi served warm.</p>
+            <div class="price">KES 200</div>
+        </div>
+
+        <div class="dessert-card">
+            <h3>Pancake Stack</h3>
+            <p>Soft pancakes served with honey and fresh fruit.</p>
+            <div class="price">KES 400</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Uhuru Restaurant. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+    const menu = document.getElementById("menu");
+
+    menu.classList.toggle("active");
+
+}
+
+</script>
+
+</body>
+</html>
