@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Uhuru Restaurant</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+        }
+
+        /* HEADER */
+        header {
+            height: 70px;
+            background: #151515;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f5b400;
+        }
+
+        /* HAMBURGER BUTTON */
+        .hamburger {
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 6px;
+            background: #f5b400;
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 26px;
+            height: 3px;
+            background: #111;
+            border-radius: 5px;
+        }
+
+        /* MENU */
+        .menu {
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            width: 220px;
+            background: #222;
+            display: none;
+            z-index: 1000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .menu.active {
+            display: block;
+        }
+
+        .menu a {
+            display: block;
+            padding: 16px 20px;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+        }
+
+        .menu a:hover {
+            background: #f5b400;
+            color: #111;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.55),
+                    rgba(0,0,0,0.75)
+                ),
+                url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #f5b400;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 25px;
+            background: #f5b400;
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+
+        /* TV SECTION */
+        .tv-section {
+            padding: 50px 20px;
+            text-align: center;
+            background: #181818;
+        }
+
+        .tv-section h2 {
+            color: #f5b400;
+            margin-bottom: 25px;
+        }
+
+        .tv {
+            max-width: 900px;
+            margin: auto;
+            background: #050505;
+            border: 12px solid #333;
+            border-radius: 15px;
+            padding: 12px;
+        }
+
+        .screen {
+            height: 230px;
+            background: #0b0b0b;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        /* MOVING FOOD LIST */
+        .moving-list {
+            display: flex;
+            white-space: nowrap;
+            animation: moveFood 20s linear infinite;
+        }
+
+        .food {
+            min-width: 230px;
+            margin: 0 15px;
+            padding: 20px;
+            background: #222;
+            border-radius: 10px;
+        }
+
+        .food h3 {
+            color: #f5b400;
+            margin-bottom: 10px;
+        }
+
+        .food p {
+            color: #ddd;
+        }
+
+        @keyframes moveFood {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* WELCOME */
+        .welcome {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .welcome h2 {
+            color: #f5b400;
+            margin-bottom: 20px;
+        }
+
+        .welcome p {
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #080808;
+            text-align: center;
+            padding: 25px;
+            color: #aaa;
+        }
+
+        /* PHONE */
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .screen {
+                height: 200px;
+            }
+
+            .food {
+                min-width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+            UHURU
+        </div>
+
+        <!-- TOP RIGHT HAMBURGER -->
+        <button class="hamburger" onclick="toggleMenu()">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <!-- MENU -->
+        <nav class="menu" id="menu">
+
+            <a href="home.html">Home</a>
+
+            <a href="services.html">Services</a>
+
+            <a href="contact.html">Contact</a>
+
+            <a href="reviews.html">Reviews</a>
+
+            <a href="gallery.html">Gallery</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Welcome to <span>Uhuru</span>
+            </h1>
+
+            <p>
+                Delicious food, great atmosphere
+                and unforgettable moments.
+            </p>
+
+            <a href="about.html" class="button">
+                Discover Uhuru
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- TV SCREEN -->
+    <section class="tv-section">
+
+        <h2>📺 UHURU TODAY'S SPECIALS</h2>
+
+        <div class="tv">
+
+            <div class="screen">
+
+                <div class="moving-list">
+
+                    <div class="food">
+                        <h3>🍗 Grilled Chicken</h3>
+                        <p>Freshly grilled and served hot.</p>
+                    </div>
+
+                    <div class="food">
+                        <h3>🍛 Kenyan Pilau</h3>
+                        <p>Traditional Kenyan flavour.</p>
+                    </div>
+
+                    <div class="food">
+                        <h3>🥩 Beef Steak</h3>
+                        <p>Tender beef with special sauce.</p>
+                    </div>
+
+                    <div class="food">
+                        <h3>🍔 Uhuru Burger</h3>
+                        <p>Our signature restaurant burger.</p>
+                    </div>
+
+                    <div class="food">
+                        <h3>🍕 Special Pizza</h3>
+                        <p>Fresh toppings and melted cheese.</p>
+                    </div>
+
+                    <div class="food">
+                        <h3>🥗 Fresh Salad</h3>
+                        <p>Crispy vegetables and dressing.</p>
+                    </div>
+
+                    <div class="food">
+                        <h3>🍹 Fresh Juice</h3>
+                        <p>Refreshing natural fruit juice.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WELCOME -->
+    <section class="welcome">
+
+        <h2>Welcome to Uhuru Restaurant</h2>
+
+        <p>
+            Enjoy delicious meals, friendly service and
+            a relaxing atmosphere at Uhuru Restaurant.
+            Whether you are coming with family, friends
+            or colleagues, there is something for everyone.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>© 2026 Uhuru Restaurant</p>
+
+    </footer>
+
+
+    <!-- HAMBURGER JAVASCRIPT -->
+    <script>
+
+        function toggleMenu() {
+
+            const menu = document.getElementById("menu");
+
+            menu.classList.toggle("active");
+
+        }
+
+    </script>
+
+</body>
+</html>
