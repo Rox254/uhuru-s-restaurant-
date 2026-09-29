@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Events - Uhuru Restaurant</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+/* HEADER */
+
+header {
+    height: 70px;
+    background: #151515;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+}
+
+.logo {
+    color: #f5b400;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* HAMBURGER */
+
+.hamburger {
+    width: 45px;
+    height: 45px;
+    background: #f5b400;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #111;
+}
+
+/* MENU */
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+
+    background: #1d1d1d;
+    width: 200px;
+
+    z-index: 1000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.menu.active {
+    display: block;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.menu a:hover {
+    background: #f5b400;
+    color: #111;
+}
+
+/* HERO */
+
+.hero {
+    height: 300px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1400&q=80")
+    center/cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #f5b400;
+}
+
+/* EVENTS */
+
+.events {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.events h2 {
+    text-align: center;
+    color: #f5b400;
+    margin-bottom: 35px;
+    font-size: 32px;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.event-card {
+    background: #1d1d1d;
+    padding: 30px;
+    border-radius: 12px;
+    border-top: 4px solid #f5b400;
+}
+
+.event-card h3 {
+    color: #f5b400;
+    margin-bottom: 15px;
+    font-size: 23px;
+}
+
+.event-card p {
+    color: #ccc;
+    line-height: 1.7;
+}
+
+.event-button {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 20px;
+    background: #f5b400;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.event-button:hover {
+    background: white;
+}
+
+/* FOOTER */
+
+footer {
+    background: #151515;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    color: #aaa;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        Uhuru Restaurant
+    </div>
+
+    <button class="hamburger" onclick="toggleMenu()">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+    <nav class="menu" id="menu">
+
+        <a href="home.html">Home</a>
+
+        <a href="services.html">Services</a>
+
+        <a href="contact.html">Contact</a>
+
+        <a href="reviews.html">Reviews</a>
+
+        <a href="gallery.html">Gallery</a>
+
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>
+        Events at Uhuru
+    </h1>
+
+</section>
+
+
+<!-- EVENTS -->
+
+<section class="events">
+
+    <h2>
+        Celebrate With Us
+    </h2>
+
+    <div class="event-grid">
+
+        <div class="event-card">
+
+            <h3>Birthday Celebrations</h3>
+
+            <p>
+                Celebrate your special day with family and friends
+                in a comfortable restaurant setting with delicious food.
+            </p>
+
+            <a href="contact.html" class="event-button">
+                Plan Your Event
+            </a>
+
+        </div>
+
+
+        <div class="event-card">
+
+            <h3>Corporate Meetings</h3>
+
+            <p>
+                Host business meetings, team lunches and corporate
+                gatherings in a relaxed and professional environment.
+            </p>
+
+            <a href="contact.html" class="event-button">
+                Contact Us
+            </a>
+
+        </div>
+
+
+        <div class="event-card">
+
+            <h3>Family Gatherings</h3>
+
+            <p>
+                Bring the whole family together for a memorable meal
+                and enjoyable time at Uhuru Restaurant.
+            </p>
+
+            <a href="contact.html" class="event-button">
+                Book a Gathering
+            </a>
+
+        </div>
+
+
+        <div class="event-card">
+
+            <h3>Private Parties</h3>
+
+            <p>
+                Make your private celebration special with food,
+                drinks and a welcoming atmosphere.
+            </p>
+
+            <a href="contact.html" class="event-button">
+                Make an Enquiry
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Uhuru Restaurant. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function toggleMenu() {
+
+    const menu = document.getElementById("menu");
+
+    menu.classList.toggle("active");
+
+}
+
+</script>
+
+</body>
+</html>
